@@ -1,4 +1,6 @@
-> Thesis template for my students
+**Thesis template**
+
+> A latex thesis template for my students
 
 # Description
 
@@ -10,7 +12,9 @@ In principle, you shouldn't need anything else for running it besides
 
 # Prompts
 
-The template is characterized by prompt questions that should help you
-in deciding what to put in each chapter and sections.
+The template is characterized by prompts (questions) that should help
+you in deciding what to put in each chapter and sections.
 
-> Note for my students: these are of fundamental importance for me
+> Note for my students: the structure presented in the thesis is
+> somewhat rigid for you, and any change to it should be discussed with
+> me.
