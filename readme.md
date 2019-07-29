@@ -8,7 +8,7 @@ This is a fully working latex template which tries to conform by the Politecnico
 di Milano standards for master thesis's production.
 
 In principle, you shouldn't need anything else for running it besides `gnu make`
-`pdflatex` and `pdftk`
+`pdflatex` and `pdftk`. Checkout `example.pdf` for an example of the output.
 
 # Instructions
 
