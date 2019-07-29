@@ -1,0 +1,104 @@
+\newpage
+\chapter*{Sommario}
+
+% \addcontentsline{toc}{chapter}{Sommario}
+
+% Sommario della tesi in italiano.
+La sicurezza delle primitive hardware che realizzano algoritmi crittografici è gravemente 
+compromessa da una classe di vulnerabilità dovute alla dispersione accidentale, da parte dei 
+dispositivi fisici, di informazioni sensibili. 
+
+Gli attacchi contro le implementazioni, conosciuti come attacchi \emph{``side-channel''},
+violano il \emph{threat model} tipico dei sistemi crittografici, la cui sicurezza è da sempre stata 
+valutata concentrandosi esclusivamente sulle proprietà matematiche degli algoritmi e dei 
+protocolli impiegati, sotto l'ipotesi che i dati confidenziali vengano sempre manipolati in modo 
+sicuro, senza cioè mai esporre nessuna informazione al di fuori degli input ed output previsti.
+
+Gli attacchi side-channel, al contrario, sfruttando fonti di output non intenzionali presenti nelle 
+implementazioni fisiche, come ad esempio il loro \emph{consumo istantaneo di potenza}, sono 
+spesso in grado di infrangere algoritmi crittografici considerati sicuri.
+In effetti, negli ultimi due decenni è diventato chiaro come gli attacchi side-channel siano non 
+solo fattibili, ma addirittura pratici ed efficienti da condurre. Per queste ragioni, rappresentano 
+una seria minaccia.
+
+Di conseguenza, le primitive crittografiche hardware devono obbligatoriamente essere 
+equipaggiate con specifiche contromisure, in grado di mitigare le vulnerabilità side-channel 
+delle implementazioni fisiche. 
+L'obiettivo dei progettisti è dunque quello di realizzare dispositivi a prova di manomissione, 
+che assicurino un livello di sicurezza adeguata, anche se realizzati da circuiti elettronici che 
+inevitabilmente rilasciano informazioni. % ....disperdono
+Le contromisure contro attacchi side-channel possono essere progettate e impiegate a 
+vari livelli di astrazione, come ad esempio a livello di algoritmo, dei gate logici o persino dei 
+transistor. 
+In questa tesi % ....Nella nostra discussione
+ci concentreremo esclusivamente su \emph{contromisure algoritmiche}, che tipicamente 
+operano cercando di ridurre la dipendenza statistica di ciascun ``valore intermedio'', 
+ottenuto durante l'elaborazione, %...la computazione
+rispetto ai dati sensibili da proteggere.
+Esistono diverse strategie per realizzare contromisure algoritmiche. Le più diffuse sono quelle 
+basate su metodi di \emph{random masking}, che si servono di una serie di input aggiuntivi 
+chiamati ``maschere'', uniformemente distribuiti su un intervallo opportuno, per partizionare 
+l'elaborazione dei valori intermedi % ....confidenziali
+in vari ``share'' (fisicamente osservabili) i quali, individualmente, risultano statisticamente 
+indipendenti dai dati sensibili.
+
+La progettazione e l'implementazione di primitive crittografiche ``provably secure'' su circuiti 
+concreti è oggigiorno un'impresa alquanto problematica. 
+Il processo di verifica della sicurezza delle contromisure è purtroppo ancora un compito oneroso 
+e prevalentemente manuale.
+In effetti, la capacità di scoprire prontamente le vulnerabilità side-channel 
+durante in ciclo di sviluppo % ....sin da subito {early in the design cycle}
+è cruciale per l'efficienza della produzione di primitive protette.
+Tuttavia, c'è una evidente carenza di metodologie consolidate per affrontare questo genere di 
+problematiche durante la fase di progettazione.
+Gli strumenti attualmente in uso sono collegati in modo non ottimale all'interno del flusso di 
+lavoro e, per di più, originalmente non erano nemmeno stati pensati per il compito di analizzare 
+le vulnerabilità side-channel. Come conseguenza, attualmente il processo di progettazione di 
+primitive crittografiche protette contro gli attacchi side-channel è parecchio oneroso nonché 
+soggetto ad errori. 
+Pertanto, c'è una forte necessità di strumenti automatizzati ed efficienti per la valutazione e la 
+verifica, a \emph{design-time}, della sicurezza delle contromisure impiegate.
+
+L'obiettivo principale di questa tesi è quello di esplorare la fattibilità di una nuova metodologia di 
+progettazione hardware che affronti precisamente queste problematiche, consentendo il rapido 
+sviluppo di primitive crittografiche hardware robuste e sicure, 
+proteggendo i progettisti dagli errori. % ....
+%
+Ciò che ci interessa maggiormente è dunque chiudere il divario esistente tra le metodologie di 
+progettazione hardware, da una parte, e la variegata collezione di tecniche di crittoanalisi per la 
+valutazione delle vulnerabilità dei circuiti crittografici, dall'altra.
+
+A questo scopo, proponiamo di fare affidamento su determinati pattern di programmazione 
+funzionale per lo sviluppo di una serie di \emph{domain-specific languages} (DSL) come base 
+per la specifica, l'implementazione e la verifica di design sicuri.
+%
+% Il fondamento del nostro approccio consiste nel....
+Il nostro approccio si fonda nel descrivere i circuiti per mezzo di specifiche ad alto livello, scritte 
+con il linguaggio funzionale Haskell. Ciò significa che % Vale a dire che....
+% ....sono rappresentate a tutti gli effetti da programmi software.
+le specifiche circuitali sono a tutti gli effetti rappresentazioni software eseguibili.
+Un tale livello di astrazione % ... più elevato % .....
+ci consente di inserire, nel codice delle specifiche, la strumentazione necessaria per realizzare le 
+procedure di verifica funzionale e altresì di valutazione delle proprietà non-funzionali relative a 
+vulnerabilità side-channel.
+%
+% Pertanto, % .......along these lines
+% Seguendo questo approccio, 
+Seguendo questo modello, 
+abbiamo sviluppato un framework di verifica basato su un nuovo DSL \emph{``polimorfico''}, 
+integrato in Haskell (\emph{domain-specific embedded language}, o DSEL), che può essere 
+arbitrariamente valutato secondo diverse interpretazioni semantiche.
+In particolare, una speciale interpretazione garantisce che le specifiche circuitali ad alto livello 
+siano sempre tradotte correttamente in descrizioni RTL industry-standard, scritte ad esempio in 
+VHDL o Verilog.
+In questo modo, siamo in grado di eseguire % la varietà di ....
+le varie procedure di verifica a partire dal medesimo documento di specifica circuitale che verrà 
+poi usato come base per la sintesi logica, mentre % .....
+il codice di strumentazione rimane sempre \emph{trasparente} al processo di sintesi di alto 
+livello.
+
+Infine, dimostreremo sperimentalmente l'efficacia del nostro approccio %nell'assistere 
+nel facilitare l'esplorazione dello spazio delle soluzioni, per quanto riguarda le primitive hardware 
+protette contro attacchi side-channel, e ne proveremo la concreta fattibilità.
+% in uno scenario reale .....
+% in un contesto industriale.

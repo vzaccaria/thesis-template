@@ -1,0 +1,116 @@
+% !TEX TS-program = xelatex
+
+\documentclass[10pt,a4paper,twoside,openright]{book}
+
+\input{src/preamble}
+
+\begin{document}
+
+
+% ===== Stage ===== %
+\thispagestyle{empty} \normalfont \cleardoublepage
+\input{src/frontmatter/stage}
+\thispagestyle{empty}  \cleardoublepage
+
+% ===== Dedication ===== %
+\thispagestyle{empty} \normalfont \cleardoublepage
+\input{src/frontmatter/dedication}
+\thispagestyle{empty}  \cleardoublepage
+
+% ===== Abstract ===== %
+\frontmatter
+\pagenumbering{Roman}
+\input{src/frontmatter/sommario}
+\input{src/frontmatter/summary}
+\pagestyle{plain} % \thispagestyle{empty}
+\vspace*{.75truecm} \cleardoublepage
+
+% ===== Lists of things ===== %
+\tableofcontents
+\listoffigures
+% \listoftables
+\lstlistoflistings
+\input{src/frontmatter/abbreviations}
+
+
+% ===== Main matter ===== %
+\mainmatter
+\pagestyle{empty}
+\cleardoublepage
+\pagenumbering{arabic}
+
+\pagestyle{fancy}
+\fancyfoot{}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}       
+\fancyhead[LE,RO]{\bfseries\thepage}
+\fancyhead[RE]{\bfseries\leftmark}
+\fancyhead[LO]{}
+% \fancyhead[RE]{\bfseries\leftmark}
+% \fancyhead[LO]{\bfseries\rightmark}
+\renewcommand{\headrulewidth}{0.3pt}
+
+
+% ===== Chapters ===== %
+\include{src/chapters/ch1}
+\thispagestyle{empty}
+% \include{src/chapters/ch2}
+% \thispagestyle{empty}
+% \include{src/chapters/ch3}
+% \thispagestyle{empty}
+% \include{src/chapters/ch4}
+% \thispagestyle{empty}
+% \include{src/chapters/ch5}
+% \thispagestyle{empty}
+% \include{chapters/ch6}
+\thispagestyle{empty}
+\cleardoublepage
+
+
+% ===== Bibliography ===== %
+\pagestyle{fancy}
+\fancyfoot{}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+\fancyhead[LE,RO]{\bfseries\thepage}
+\fancyhead[RE]{}
+\fancyhead[LO]{}
+\renewcommand{\headrulewidth}{0.3pt}
+
+% Remove numbering from the first page of bibliography
+\newbool{firstbib}
+\booltrue{firstbib}
+\preto{\bibitem}{\ifbool{firstbib}{\thispagestyle{empty}\setbool{firstbib}{false}}{}}
+
+\addcontentsline{toc}{chapter}{Bibliography}
+\renewcommand\bibname{Bibliography}
+\bibliographystyle{apa}
+\bibliography{biblio}
+\nocite{*} % <-- this should be commented...
+%\thispagestyle{empty}
+\cleardoublepage
+
+
+% ===== Appendix ===== %
+\appendix
+
+\pagestyle{fancy}
+\fancyfoot{}
+\renewcommand{\chaptermark}[1]{\markboth{\appendixname\ \thechapter.\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+\fancyhead[LE,RO]{\bfseries\thepage}
+\fancyhead[RE]{\bfseries\leftmark}
+\fancyhead[LO]{}
+% \fancyhead[RE]{\bfseries\leftmark}
+% \fancyhead[LO]{\bfseries\rightmark}
+\renewcommand{\headrulewidth}{0.3pt}
+
+
+% ===== Backmatter ===== %
+\backmatter
+\clearpage
+\pagestyle{empty}
+{~} \clearpage {~}
+
+\end{document}
+

@@ -8,13 +8,12 @@
 \addtolength{\evensidemargin} {-0.4 cm}
 \linespread{1.1}
 
+\input{src/data}
+
 
 \usepackage{libertine}
 \usepackage[T1]{fontenc}
 \usepackage[libertine,cmintegrals,cmbraces,vvarbb]{newtxmath}
-
-% or just this: \usepackage[sc]{mathpazo}
-
 
 \pagestyle{empty}
 
@@ -22,53 +21,44 @@
 \vspace*{-1.5cm} 
 \begin{center}
   \large
-  POLITECNICO DI MILANO\\
+  \textsc{\theinstitution{}} \\
   \normalsize
   
-  Scuola di Ingegneria Industriale e dell'Informazione\\
-  Corso di Laurea Magistrale in Ingegneria Informatica\\
+  \theschool{} \\
+  \thecourse{} \\
   
   \vspace*{0.3cm}
 
   \begin{figure}[htbp]
     \begin{center}
-      \includegraphics[width=3.5cm]{./src/logo_pdm.pdf}
+      \includegraphics[width=3.5cm]{./assets/logo_pdm.pdf}
     \end{center}
   \end{figure}
   \vspace*{0.3cm} \LARGE
-
-
-
-  A METHODOLOGY BASED ON FUNCTIONAL LANGUAGES
-           FOR THE DESIGN OF HARDWARE CRYPTOGRAPHIC 
-           PRIMITIVES RESISTANT TO SIDE-CHANNEL ATTACKS\\
-
-
-
+  \textsc{\thetitle{}}
            \vspace*{.75truecm}
 \end{center}
 \vspace*{2.5cm} \large
+
 \begin{flushleft}
-
-
-  {Advisor (Politecnico di Milano)}:\\ Prof. Vittorio ZACCARIA\\
-  ~\\
-  Co-Advisor (STMicroelectronics):\\ Ing. Filippo MELZANI
-
+\begin{tabular}{lll}
+        Advisor & (\theadvisori): & \theadvisor{} \\
+                &&\\
+        Co-Advisor & (\thecoadvisori{}): & \thecoadvisor{} \\
+                   & (\thecoadvisorti{}):& \thecoadvisort{} \\
+\end{tabular}
 \end{flushleft}
+
 \vspace*{1.0cm}
+
 \begin{flushright}
-
-  Tesi di Laurea Magistrale di:\\ Lorenzo DELLEDONNE\\ matricola 804661
-  % Master's Thesis of:\\ Lorenzo DELLEDONNE\\ matricola 804661
-
-
+        Tesi di Laurea Magistrale di:\\ \theauthorname{} \\ matricola \theauthormatricola{}
 \end{flushright}
+
 \vspace*{1.0cm}
+
 \begin{center}
-
-
-  Academic Year 2016-2017 
+Academic Year \theacademicyear{}
 \end{center} 
 \clearpage
 \end{document}

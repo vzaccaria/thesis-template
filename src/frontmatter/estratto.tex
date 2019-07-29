@@ -1,0 +1,35 @@
+
+La sicurezza delle primitive hardware che realizzano algoritmi crittografici è gravemente 
+compromessa da una classe di vulnerabilità dovute alla dispersione accidentale, da parte dei 
+dispositivi fisici, di informazioni sensibili. 
+Gli attacchi contro le implementazioni, conosciuti come attacchi \emph{``side-channel''},
+sfruttano fonti di output non intenzionali, % presenti nelle implementazioni fisiche, 
+come il \emph{consumo istantaneo di potenza}, per infrangere algoritmi crittografici 
+considerati sicuri.
+Di conseguenza, le primitive crittografiche hardware devono obbligatoriamente essere 
+equipaggiate con particolari \emph{contromisure}, in grado di mitigare le vulnerabilità 
+side-channel delle implementazioni fisiche. 
+
+Tuttavia, c'è una evidente carenza di metodologie consolidate per gestire
+il design e l'implementazione di primitive crittografiche protette contro attacchi side-channel.
+Come conseguenza, attualmente il processo di progettazione di primitive crittografiche protette 
+contro gli attacchi side-channel è parecchio oneroso nonché soggetto ad errori. 
+L'obiettivo principale di questa tesi è quello di esplorare la fattibilità di una nuova metodologia di 
+progettazione hardware, in grado di ridurre il divario % esistente.....
+tra le metodologie di progettazione esistenti, da una parte, e la variegata collezione di tecniche 
+di crittoanalisi per la valutazione delle vulnerabilità side-channel dei circuiti crittografici, dall'altra.
+
+Proponiamo di fare affidamento su speciali pattern di programmazione funzionale per lo sviluppo 
+di una serie di \emph{domain-specific languages} (DSL) come base per la specifica, 
+l'implementazione e la verifica di design sicuri.
+Abbiamo sviluppato un framework di verifica basato su un nuovo DSL \emph{``polimorfico''}, 
+integrato in Haskell (\emph{domain-specific embedded language}, o DSEL), che può essere 
+arbitrariamente valutato secondo diverse interpretazioni semantiche.
+In questo modo, siamo in grado di eseguire le varie procedure di verifica necessarie, così come 
+di generare automaticamente una specifica RTL del circuito (scritta in VHDL o Verilog), 
+sintetizzabile per mezzo di strumenti industry-standard, a partire dalla medesima specifica ad 
+alto livello.
+
+Forniamo infine una valutazione sperimentale sull'efficacia del nostro approccio nel facilitare 
+l'esplorazione dello spazio delle soluzioni, per quanto riguarda le primitive hardware protette da 
+contromisure, e ne proveremo la concreta fattibilità.

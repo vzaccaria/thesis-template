@@ -1,5 +1,8 @@
 
-all: cover.pdf 
+all: cover.pdf thesis.pdf
 
-%.pdf: %.tex
+%.pdf: %.tex src/preamble.tex 
 	jslatex $<
+
+clean: 
+	rm -f *.pdf *.lof *.lol
