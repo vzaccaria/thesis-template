@@ -1,41 +1,5 @@
 \newpage
 \chapter*{Abstract}
 
-% \addcontentsline{toc}{chapter}{Abstract}
+One page in english describing the summary of your work
 
-% This thesis points out the value of using a modern functional language for
-% designing industrial-grade cryptographic hardware primitives resistant against
-% side-channel attacks.
-
-% The security of hardware cryptographic primitives can be broken by \emph{``side-channel''} attacks
-
-The security of hardware cryptographic primitives is critically affected 
-by a class of vulnerabilities due to the unintended leakage, occurring in physical 
-devices, of sensitive information. 
-Attacks against implementations, known as \emph{``side-channel''} attacks, exploit 
-unexpected physical output channels, such as the \emph{instantaneous 
-power consumption}, to break cryptographic algorithms otherwise thought as secure.
-Consequently, hardware cryptographic primitives must be equipped with specific 
-\emph{countermeasures} that mitigate the side-channel vulnerability of the physical 
-implementations. 
-
-However, there is an obvious lack of established methodologies for dealing with
-the design and the implementation of cryptographic primitives protected against side-channel 
-attacks. As a result, the current development process is both onerous and error-prone.
-The main goal of this thesis is to explore the feasibility of a new hardware design methodology,
-suitable for closing the gap that exists between current hardware design practices and the 
-diverse set of side-channel cryptanalysis techniques for the assessment of the security 
-vulnerability of cryptographic circuits.
-
-We propose to rely on special functional programming patterns for developing a 
-number of \emph{domain-specific languages} (DSLs) as the basis for the specification, the 
-implementation and the verification of secure designs.
-We built an instrumentation framework that relies on a new \emph{``polymorphic'' 
-domain-specific embedded language} (DSEL), within Haskell,
-which can be arbitrarily re-evaluated according 
-to multiple language interpretations. In this way, we manage to perform the variety of 
-validation tasks needed, as well as to generate an industry-standard synthesizable RTL description (written in VHDL or Verilog), % by using the
-starting from the very same high-level circuit specification.
-
-We provide an experimental evaluation about the effectiveness of our approach in assisting 
-the design-space exploration of protected primitives, and we demonstrate its actual feasibility in a real-world scenario.
