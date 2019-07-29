@@ -1,10 +1,11 @@
+SRC?= $(wildcard src/*.tex src/chapters/*.tex src/frontmatter/*.tex)
 
-all: cover.pdf thesis.pdf
+all: complete.pdf 
 
-cover.pdf: cover.tex src/preamble.tex 
+cover.pdf: cover.tex $(SRC)
 	pdflatex -interaction=nonstopmode -halt-on-error -shell-escape $< > latex.log
 
-thesis.pdf: thesis.tex src/preamble.tex 
+thesis.pdf: thesis.tex  $(SRC)
 	pdflatex -interaction=nonstopmode -halt-on-error -shell-escape $< > latex.log
 	bibtex thesis >> latex.log
 	pdflatex -interaction=nonstopmode -halt-on-error -shell-escape $<  >> latex.log
