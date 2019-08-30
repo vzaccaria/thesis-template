@@ -18,4 +18,4 @@ example.pdf: complete.pdf
 	cp $< $@
 
 clean: 
-	@rm -f *.toc *.aux *.bbl *.blg *.dvi *.bak *.ps *bkup *.tcp *.tps *.log *.lof *.lot *.lol *~ *.backup *.pdf
+	@rm -f *.toc *.aux *.bbl *.blg *.dvi *.bak *.ps *bkup *.tcp *.tps *.log *.lof *.lot *.lol *~ *.backup complete.pdf cover.pdf
