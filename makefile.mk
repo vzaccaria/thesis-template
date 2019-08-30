@@ -14,5 +14,8 @@ thesis.pdf: thesis.tex  $(SRC)
 complete.pdf: cover.pdf thesis.pdf
 	pdftk $^ cat output $@
 
+example.pdf: complete.pdf
+	cp $< $@
+
 clean: 
 	@rm -f *.toc *.aux *.bbl *.blg *.dvi *.bak *.ps *bkup *.tcp *.tps *.log *.lof *.lot *.lol *~ *.backup *.pdf
