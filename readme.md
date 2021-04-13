@@ -28,3 +28,8 @@ This compiles and concatenates the `cover.pdf` and `thesis.pdf` into
 - Frontmatter data (e.g., acknowlegdements, dedications and so on) are stored in
   `src/frontmatter`.
 - Bibliography must be written in the `biblio.bib` file
+
+# Thesis writing prompts
+
+For some up-to-date suggestions on the thesis TOC and writing prompts, please
+[check out this address](https://www.notion.so/Thesis-writing-prompts-445476388185454ba03440220fa00a64).
