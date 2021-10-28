@@ -1,14 +1,17 @@
 **Thesis template**
 
-> A latex thesis template for my students
+> A latex thesis template for Polimi students.
 
 # Description
 
 This is a fully working latex template which tries to conform by the Politecnico
 di Milano standards for master thesis's production.
 
+The current template follows the guidelines published on October 2021 by the
+Scuola 3I @ Polimi.
+
 In principle, you shouldn't need anything else for running it besides `gnu make`
-`pdflatex` and `pdftk`. Checkout `example.pdf` for an example of the output.
+`pdflatex`. Checkout `example.pdf` for an example of the output.
 
 # Instructions
 
@@ -24,9 +27,10 @@ This compiles and concatenates the `cover.pdf` and `thesis.pdf` into
 # What to edit
 
 - To modify title, authors and so on, edit only `src/data.tex`.
-- Chapters must be stored in `src/chapters`
+- Chapters must be stored in `src/chapters`. Remember to include the file in
+  `thesis.tex` with `\input`.
 - Frontmatter data (e.g., acknowlegdements, dedications and so on) are stored in
-  `src/frontmatter`.
+  `src`.
 - Bibliography must be written in the `biblio.bib` file
 
 # Thesis writing prompts
