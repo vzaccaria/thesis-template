@@ -13,4 +13,4 @@ example.pdf: thesis.pdf
 	cp $< $@
 
 clean: 
-	@rm -f *.toc *.aux *.bbl *.blg *.dvi *.bak *.ps *bkup *.tcp *.tps *.log *.lof *.lot *.lol *~ *.backup thesis.pdf example.pdf
+	@rm -f *.toc *.aux *.bbl *.blg *.dvi *.bak *.ps *bkup *.tcp *.tps *.log *.lof *.lot *.lol *~ *.backup thesis.pdf example.pdf *.out

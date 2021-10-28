@@ -1,49 +1,46 @@
-% !TEX TS-program = xelatex
+% READ THIS BEFORE ANYTHING ELSE: 
+% in principle you should not modify this file unless you want to:
+% - Add remove new chapters (using '\input' as shown below)
+% - Add remove appendices etc.. 
+% For the thesis data (your name and so on..), please edit 'src/data.tex'
+
 
 \documentclass{assets/PoliMi3i_thesis}
-
-\input{src/polimi-preamble}
-\input{src/preamble}
+\input{assets/polimi-preamble}
+\input{assets/preamble}
+\input{src/data}
 
 \begin{document}
-
 \fancypagestyle{plain}{%
 \fancyhf{} % Clear all header and footer fields
 \fancyhead[RO,RE]{\thepage} %RO=right odd, RE=right even
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}}
-
-%----------------------------------------------------------------------------
-%	TITLE PAGE
-%----------------------------------------------------------------------------
-
 \pagestyle{empty} % No page numbers
 \frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the preamble pages
 
 \puttitle{
-	title=Title, % Title of the thesis
-	name=Name Surname, % Author Name and Surname
-	course=Xxxxxxx Engineering - Ingegneria Xxxxxxx, % Study Programme (in Italian)
-	ID  = 000000,  % Student ID number (numero di matricola)
-	advisor= Prof. Name Surname, % Supervisor name
-	coadvisor={Name Surname, Name Surname}, % Co-Supervisor name, remove this line if there is none
-	academicyear={20XX-XX},  % Academic Year
+	title=\thetitle, % Title of the thesis
+	name=\theauthorname, % Author Name and Surname
+	course=\thecourse, % Study Programme (in Italian)
+	ID  = \theauthormatricola,  % Student ID number (numero di matricola)
+	advisor= \theadvisor, % Supervisor name
+	coadvisor={\thecoadvisor}, % Co-Supervisor name, remove this line if there is none
+	academicyear={\theacademicyear},  % Academic Year
 } % These info will be put into your Title page 
 
 \startpreamble
 \setcounter{page}{1} % Set page counter to 1
 
-% ABSTRACT IN ENGLISH
 \input{src/abstract-en}
-\textbf{Keywords:} here, the keywords, of your thesis % Keywords
+\textbf{Keywords:} \thekeywords
 
-% ABSTRACT IN ITALIAN
 \input{src/abstract-it}
-\textbf{Parole chiave:} qui, vanno, le parole chiave, della tesi % Keywords (italian)
+\textbf{Parole chiave:} \thekeywordsi
 
-% TABLE OF CONTENTS
 \thispagestyle{empty}
 \tableofcontents % Table of contents 
+
 \thispagestyle{empty}
 \cleardoublepage
 
