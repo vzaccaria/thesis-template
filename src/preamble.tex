@@ -2,202 +2,202 @@
 
 
 % ===== XeLaTeX I/O setup ===== %
-\usepackage[english]{babel}
-%\usepackage{polyglossia}
-%\setmainlanguage{english}
-% \usepackage{mathspec} % loads fontspec as well
-% \defaultfontfeatures{Ligatures=TeX}
-% \usepackage{lmodern}
+%\usepackage[english]{babel}
+%%\usepackage{polyglossia}
+%%\setmainlanguage{english}
+%% \usepackage{mathspec} % loads fontspec as well
+%% \defaultfontfeatures{Ligatures=TeX}
+%% \usepackage{lmodern}
 
-\usepackage{libertine}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{amsmath,amssymb,amsthm}
-\usepackage[libertine,cmintegrals,cmbraces,vvarbb]{newtxmath}
+%\usepackage{libertine}
+%\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+%\usepackage{amsmath,amssymb,amsthm}
+%\usepackage[libertine,cmintegrals,cmbraces,vvarbb]{newtxmath}
 
-% ===== Page Layout ===== %
-\usepackage{fancyhdr}
-\usepackage{etoolbox}
-% \setlength{\paperwidth}{16cm}
-% \setlength{\paperheight}{24cm}
-\setlength{\oddsidemargin} {2. cm}
-\setlength{\evensidemargin} {2. cm}
-\addtolength{\oddsidemargin} {-0.4 cm}
-\addtolength{\evensidemargin} {-0.4 cm}
-\linespread{1.1}
-
-
-\usepackage{acronym}
-\usepackage{afterpage}
-\usepackage{enumitem}
-\usepackage{float}
-\usepackage{graphicx}
-\usepackage{needspace}
-\usepackage[numbers]{natbib}
-\usepackage{rotating}
-\usepackage[font=small, labelfont=sc, textfont=it]{caption}
-\usepackage[position=b, labelfont=rm]{subcaption}
-\usepackage{tabularx}
-\usepackage{url}
-\usepackage{lipsum}
-\usepackage{xargs} 
-\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
-\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{(VZ): non sono sicuro di questo}}
-\newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{(VZ): cambiare in "#2"}}
-\newcommandx{\info}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{(VZ): #2}}
-\newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{(VZ): #2}}
-
-% \usepackage{scrextend}
-\usepackage{framed}
-\usepackage{fancyvrb}
-\DeclareTextCommand{\nobreakspace}{T1}{\leavevmode\nobreak\ }
+%% ===== Page Layout ===== %
+%\usepackage{fancyhdr}
+%\usepackage{etoolbox}
+%% \setlength{\paperwidth}{16cm}
+%% \setlength{\paperheight}{24cm}
+%\setlength{\oddsidemargin} {2. cm}
+%\setlength{\evensidemargin} {2. cm}
+%\addtolength{\oddsidemargin} {-0.4 cm}
+%\addtolength{\evensidemargin} {-0.4 cm}
+%\linespread{1.1}
 
 
-% ===== Fonts ===== %
+%\usepackage{acronym}
+%\usepackage{afterpage}
+%\usepackage{enumitem}
+%\usepackage{float}
+%\usepackage{graphicx}
+%\usepackage{needspace}
+%\usepackage[numbers]{natbib}
+%\usepackage{rotating}
+%\usepackage[font=small, labelfont=sc, textfont=it]{caption}
+%\usepackage[position=b, labelfont=rm]{subcaption}
+%\usepackage{tabularx}
+%\usepackage{url}
+%\usepackage{lipsum}
+%\usepackage{xargs} 
+%\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+%\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{(VZ): non sono sicuro di questo}}
+%\newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{(VZ): cambiare in "#2"}}
+%\newcommandx{\info}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{(VZ): #2}}
+%\newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{(VZ): #2}}
+
+%% \usepackage{scrextend}
+%\usepackage{framed}
+%\usepackage{fancyvrb}
+%\DeclareTextCommand{\nobreakspace}{T1}{\leavevmode\nobreak\ }
+
+
+%% ===== Fonts ===== %
 
 
 
-% ===== Styling ===== %
-\captionsetup{labelsep=period}
-\captionsetup[table]{skip=1.5pt}
-% \DeclareCaptionLabelSeparator{dot-space}{.~~}
-% \captionsetup{labelsep=dot-space}
+%% ===== Styling ===== %
+%\captionsetup{labelsep=period}
+%\captionsetup[table]{skip=1.5pt}
+%% \DeclareCaptionLabelSeparator{dot-space}{.~~}
+%% \captionsetup{labelsep=dot-space}
 
-\setlist[description]{leftmargin=\parindent,labelindent=\parindent}
+%\setlist[description]{leftmargin=\parindent,labelindent=\parindent}
 
-\urlstyle{same}
+%\urlstyle{same}
 
-\usepackage{tabstackengine}
-\stackMath
-% === %
-
-
-% ===== Footnotes ===== %
-\usepackage{scrextend}
-\makeatletter
-\def\@xfootnote[#1]{%
-  \protected@xdef\@thefnmark{#1}%
-  \@footnotemark\@footnotetext}
-\makeatother
-\deffootnote{0em}{1.6em}{\thefootnotemark.\enskip}
-
-% === %
-
-% ===== Definitions and Theorems ===== %
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}
-\newtheorem{assumption}{Assumption}
-\newtheorem{corollary}{Corollary}
-\newtheorem{remark}{Remark}
-\newtheorem{example}{Example}
-
-% \linespread{0.99}
-% \theoremstyle{plain}
-% \newtheorem{theorem}{Theorem}
-% === %
+%\usepackage{tabstackengine}
+%\stackMath
+%% === %
 
 
-% ===== Algorithms and code ===== %
-\usepackage{listings}
-\lstset{
-  basicstyle        = \small\ttfamily,
-  breaklines        = true,
-  breakatwhitespace = true,
-  keywordstyle      = \bfseries,
-  captionpos        = t,
-  commentstyle      = \ttfamily,
-  commentstyle      = \ttfamily\itshape,
-  % commentstyle    = \small\rmfamily\itshape,
-  columns           = fullflexible,
-  frame             = lines,
-  %language         = Haskell,
-  %xleftmargin      = .1\textwidth, xrightmargin=.1\textwidth,
-  keepspaces        = true
-}
+%% ===== Footnotes ===== %
+%\usepackage{scrextend}
+%\makeatletter
+%\def\@xfootnote[#1]{%
+%  \protected@xdef\@thefnmark{#1}%
+%  \@footnotemark\@footnotetext}
+%\makeatother
+%\deffootnote{0em}{1.6em}{\thefootnotemark.\enskip}
 
-% \usepackage{minted}
+%% === %
 
-\usepackage{algorithm}
-\usepackage{algorithmicx}
-\usepackage{algpseudocode}
-\makeatletter
-\def\BState{\State\hskip-\ALG@thistlm}
-\makeatother
-% === %
+%% ===== Definitions and Theorems ===== %
+%\theoremstyle{definition}
+%\newtheorem{definition}{Definition}
+%\newtheorem{assumption}{Assumption}
+%\newtheorem{corollary}{Corollary}
+%\newtheorem{remark}{Remark}
+%\newtheorem{example}{Example}
+
+%% \linespread{0.99}
+%% \theoremstyle{plain}
+%% \newtheorem{theorem}{Theorem}
+%% === %
 
 
-% ===== Hyphenation ==== %
-\hyphenation{a-na-ly-sis}
-\hyphenation{ab-s-trac-ting}
-\hyphenation{au-to-ma-ti-cal-ly}
-\hyphenation{au-to-ma-tiz-za-ti}
-\hyphenation{chiu-de-re}
-\hyphenation{cor-re-spon-ding}
-\hyphenation{crypt-a-na-ly-sis}
-\hyphenation{de-cla-ra-tion}
-\hyphenation{en-for-cing}
-\hyphenation{e-va-lu-a-ting}
-\hyphenation{e-va-lu-a-tion}
-\hyphenation{e-va-lu-a-tions}
-\hyphenation{ex-pli-cit-ly}
-\hyphenation{Ha-skell}
-\hyphenation{im-pie-ga-te}
-\hyphenation{in-du-stri-a-li-za-tion}
-\hyphenation{in-stan-tia-ted}
-\hyphenation{in-te-re-s-ting}
-\hyphenation{me-tho-do-lo-gy}
-\hyphenation{mo-du-lar}
-\hyphenation{na-tu-ral}
-\hyphenation{o-pe-ra-tion}
-\hyphenation{o-ri-gi-nal}
-\hyphenation{phy-si-cal}
-\hyphenation{po-pu-lar}
-\hyphenation{pri-mi-ti-ve}
-\hyphenation{pro-blems}
-\hyphenation{pro-du-ct}
-\hyphenation{pro-pa-ga-tion}
-\hyphenation{pro-per-ly}
-\hyphenation{pro-per-ty}
-\hyphenation{Quick-Check}
-\hyphenation{ran-do-mi-zed}
-\hyphenation{re-gu-lar}
-\hyphenation{see-min-gly}
-\hyphenation{si-mu-la-ted}
-\hyphenation{si-mu-la-tion}
-\hyphenation{spe-ci-fi-ca-tion}
-\hyphenation{spe-ci-fi-ca-tio-ns}
-\hyphenation{spe-ci-fi-ed}
-\hyphenation{va-li-da-tion}
-\hyphenation{va-lu-es}
-\hyphenation{ve-ri-fi-ca-tion}
-\hyphenation{Ve-ri-log}
-\hyphenation{vio-la-no}
+%% ===== Algorithms and code ===== %
+%\usepackage{listings}
+%\lstset{
+%  basicstyle        = \small\ttfamily,
+%  breaklines        = true,
+%  breakatwhitespace = true,
+%  keywordstyle      = \bfseries,
+%  captionpos        = t,
+%  commentstyle      = \ttfamily,
+%  commentstyle      = \ttfamily\itshape,
+%  % commentstyle    = \small\rmfamily\itshape,
+%  columns           = fullflexible,
+%  frame             = lines,
+%  %language         = Haskell,
+%  %xleftmargin      = .1\textwidth, xrightmargin=.1\textwidth,
+%  keepspaces        = true
+%}
 
-% ===== Custom commands ==== %
-\newcommand{\CLaSH}{CλaSH}
-%\newcommand{\CLaSH}{C$\lambda$aSH}
-\newcommand{\dollar}{\$}
-\newcommand{\ampersand}{\&}
-\newsavebox{\LstFootBox}
-\newsavebox{\LstFootBoxB}
+%% \usepackage{minted}
+
+%\usepackage{algorithm}
+%\usepackage{algorithmicx}
+%\usepackage{algpseudocode}
+%\makeatletter
+%\def\BState{\State\hskip-\ALG@thistlm}
+%\makeatother
+%% === %
 
 
-%\usepackage[bottom]{footmisc}
-%\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype} % see http://www.khirevich.com/latex/microtype/
-% \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
-%\usepackage{subfigure}
-%\usepackage{upquote}
-\usepackage{pdfpages}
+%% ===== Hyphenation ==== %
+%\hyphenation{a-na-ly-sis}
+%\hyphenation{ab-s-trac-ting}
+%\hyphenation{au-to-ma-ti-cal-ly}
+%\hyphenation{au-to-ma-tiz-za-ti}
+%\hyphenation{chiu-de-re}
+%\hyphenation{cor-re-spon-ding}
+%\hyphenation{crypt-a-na-ly-sis}
+%\hyphenation{de-cla-ra-tion}
+%\hyphenation{en-for-cing}
+%\hyphenation{e-va-lu-a-ting}
+%\hyphenation{e-va-lu-a-tion}
+%\hyphenation{e-va-lu-a-tions}
+%\hyphenation{ex-pli-cit-ly}
+%\hyphenation{Ha-skell}
+%\hyphenation{im-pie-ga-te}
+%\hyphenation{in-du-stri-a-li-za-tion}
+%\hyphenation{in-stan-tia-ted}
+%\hyphenation{in-te-re-s-ting}
+%\hyphenation{me-tho-do-lo-gy}
+%\hyphenation{mo-du-lar}
+%\hyphenation{na-tu-ral}
+%\hyphenation{o-pe-ra-tion}
+%\hyphenation{o-ri-gi-nal}
+%\hyphenation{phy-si-cal}
+%\hyphenation{po-pu-lar}
+%\hyphenation{pri-mi-ti-ve}
+%\hyphenation{pro-blems}
+%\hyphenation{pro-du-ct}
+%\hyphenation{pro-pa-ga-tion}
+%\hyphenation{pro-per-ly}
+%\hyphenation{pro-per-ty}
+%\hyphenation{Quick-Check}
+%\hyphenation{ran-do-mi-zed}
+%\hyphenation{re-gu-lar}
+%\hyphenation{see-min-gly}
+%\hyphenation{si-mu-la-ted}
+%\hyphenation{si-mu-la-tion}
+%\hyphenation{spe-ci-fi-ca-tion}
+%\hyphenation{spe-ci-fi-ca-tio-ns}
+%\hyphenation{spe-ci-fi-ed}
+%\hyphenation{va-li-da-tion}
+%\hyphenation{va-lu-es}
+%\hyphenation{ve-ri-fi-ca-tion}
+%\hyphenation{Ve-ri-log}
+%\hyphenation{vio-la-no}
+
+%% ===== Custom commands ==== %
+%\newcommand{\CLaSH}{CλaSH}
+%%\newcommand{\CLaSH}{C$\lambda$aSH}
+%\newcommand{\dollar}{\$}
+%\newcommand{\ampersand}{\&}
+%\newsavebox{\LstFootBox}
+%\newsavebox{\LstFootBoxB}
 
 
-% ===== Pandoc commands ===== %
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+%%\usepackage[bottom]{footmisc}
+%%\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype} % see http://www.khirevich.com/latex/microtype/
+%% \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+%%\usepackage{subfigure}
+%%\usepackage{upquote}
+%\usepackage{pdfpages}
 
-% set default figure placement to htbp
-\makeatletter
-\def\fps@figure{htbp}
-\makeatother
 
-\lstset{aboveskip=10pt,belowskip=20pt}
+%% ===== Pandoc commands ===== %
+%\setlength{\emergencystretch}{3em}  % prevent overfull lines
+%\providecommand{\tightlist}{%
+%  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+%% set default figure placement to htbp
+%\makeatletter
+%\def\fps@figure{htbp}
+%\makeatother
+
+%\lstset{aboveskip=10pt,belowskip=20pt}

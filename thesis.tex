@@ -1,116 +1,80 @@
 % !TEX TS-program = xelatex
 
-\documentclass[12pt,a4paper,twoside,openright]{book}
+\documentclass{assets/PoliMi3i_thesis}
 
+\input{src/polimi-preamble}
 \input{src/preamble}
 
 \begin{document}
 
+\fancypagestyle{plain}{%
+\fancyhf{} % Clear all header and footer fields
+\fancyhead[RO,RE]{\thepage} %RO=right odd, RE=right even
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}}
 
-% ===== Stage ===== %
-\thispagestyle{empty} \normalfont \cleardoublepage
-\input{src/frontmatter/stage}
-\thispagestyle{empty}  \cleardoublepage
+%----------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------
 
-% ===== Dedication ===== %
-\thispagestyle{empty} \normalfont \cleardoublepage
-\input{src/frontmatter/dedication}
-\thispagestyle{empty}  \cleardoublepage
+\pagestyle{empty} % No page numbers
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the preamble pages
 
-% ===== Abstract ===== %
-\frontmatter
-\pagenumbering{Roman}
-\input{src/frontmatter/sommario}
-\input{src/frontmatter/summary}
-\pagestyle{plain} % \thispagestyle{empty}
-\vspace*{.75truecm} \cleardoublepage
+\puttitle{
+	title=Title, % Title of the thesis
+	name=Name Surname, % Author Name and Surname
+	course=Xxxxxxx Engineering - Ingegneria Xxxxxxx, % Study Programme (in Italian)
+	ID  = 000000,  % Student ID number (numero di matricola)
+	advisor= Prof. Name Surname, % Supervisor name
+	coadvisor={Name Surname, Name Surname}, % Co-Supervisor name, remove this line if there is none
+	academicyear={20XX-XX},  % Academic Year
+} % These info will be put into your Title page 
 
-% ===== Lists of things ===== %
-\tableofcontents
-\listoffigures
-% \listoftables
-\lstlistoflistings
-\input{src/frontmatter/abbreviations}
+\startpreamble
+\setcounter{page}{1} % Set page counter to 1
 
+% ABSTRACT IN ENGLISH
+\input{src/abstract-en}
+\textbf{Keywords:} here, the keywords, of your thesis % Keywords
 
-% ===== Main matter ===== %
-\mainmatter
-\pagestyle{empty}
+% ABSTRACT IN ITALIAN
+\input{src/abstract-it}
+\textbf{Parole chiave:} qui, vanno, le parole chiave, della tesi % Keywords (italian)
+
+% TABLE OF CONTENTS
+\thispagestyle{empty}
+\tableofcontents % Table of contents 
+\thispagestyle{empty}
 \cleardoublepage
-\pagenumbering{arabic}
 
-\pagestyle{fancy}
-\fancyfoot{}
-\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ #1}{}}
-\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}       
-\fancyhead[LE,RO]{\bfseries\thepage}
-\fancyhead[RE]{\bfseries\leftmark}
-\fancyhead[LO]{}
-% \fancyhead[RE]{\bfseries\leftmark}
-% \fancyhead[LO]{\bfseries\rightmark}
-\renewcommand{\headrulewidth}{0.3pt}
-
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+\mainmatter % Begin numeric (1,2,3...) page numbering
 
 % ===== Chapters ===== %
 \include{src/chapters/ch1}
-\thispagestyle{empty}
 % \include{src/chapters/ch2}
-% \thispagestyle{empty}
-% \include{src/chapters/ch3}
-% \thispagestyle{empty}
-% \include{src/chapters/ch4}
-% \thispagestyle{empty}
-% \include{src/chapters/ch5}
-% \thispagestyle{empty}
-% \include{chapters/ch6}
-\thispagestyle{empty}
-\cleardoublepage
+% \include{src/chapters/ch3} ...
 
 
 % ===== Bibliography ===== %
-\pagestyle{fancy}
-\fancyfoot{}
-\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ #1}{}}
-\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
-\fancyhead[LE,RO]{\bfseries\thepage}
-\fancyhead[RE]{}
-\fancyhead[LO]{}
-\renewcommand{\headrulewidth}{0.3pt}
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
 
-% Remove numbering from the first page of bibliography
-\newbool{firstbib}
-\booltrue{firstbib}
-\preto{\bibitem}{\ifbool{firstbib}{\thispagestyle{empty}\setbool{firstbib}{false}}{}}
-
-\addcontentsline{toc}{chapter}{Bibliography}
-\renewcommand\bibname{Bibliography}
-\bibliographystyle{abbrv}
 \bibliography{biblio}
-\nocite{*} % <-- this should be commented...
-%\thispagestyle{empty}
+
 \cleardoublepage
-
-
-% ===== Appendix ===== %
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
 \appendix
 
-\pagestyle{fancy}
-\fancyfoot{}
-\renewcommand{\chaptermark}[1]{\markboth{\appendixname\ \thechapter.\ #1}{}}
-\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
-\fancyhead[LE,RO]{\bfseries\thepage}
-\fancyhead[RE]{\bfseries\leftmark}
-\fancyhead[LO]{}
-% \fancyhead[RE]{\bfseries\leftmark}
-% \fancyhead[LO]{\bfseries\rightmark}
-\renewcommand{\headrulewidth}{0.3pt}
+% LIST OF FIGURES
+\listoffigures
 
+% LIST OF TABLES
+\listoftables
 
-% ===== Backmatter ===== %
-\backmatter
-\clearpage
-\pagestyle{empty}
-{~} \clearpage {~}
+\input{src/list-of-symbols}
 
+\input{src/acknowledgements}
+
+\cleardoublepage
 \end{document}
 
