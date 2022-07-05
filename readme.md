@@ -7,8 +7,15 @@
 This is a fully working latex template which tries to conform by the Politecnico
 di Milano standards for master thesis's production.
 
-The current template follows the guidelines published on October 2021 by the
-Scuola 3I @ Polimi.
+The current template is the "Classical format thesis" published on October 2021
+by the Scuola 3I @ Polimi [^1].
+
+The Scuola 3I mandates that, for a thesis with a reviewer, an extended six page
+executive summary must be provided; this abstract must be written accoridng to
+the Executive Summary template [^2].
+
+In alternative, the CCS of computer science and engineering allows a Journal
+format (30 pages) to be written according to another template [^3].
 
 In principle, you shouldn't need anything else for running it besides `gnu make`
 `pdflatex`. Checkout `thesis.pdf` for an example of the output.
@@ -37,3 +44,16 @@ This compiles and concatenates the `cover.pdf` and `thesis.pdf` into
 
 For some up-to-date suggestions on the thesis TOC and writing prompts, please
 [check out this address](https://www.notion.so/Thesis-writing-prompts-445476388185454ba03440220fa00a64).
+
+[^1]:
+
+  https://www.ingindinf.polimi.it/it/didattica/lezioni-e-esami/esami-di-laurea-e-laurea-magistrale
+  https://www.overleaf.com/latex/templates/classical-format-thesis-scuola-di-ingegneria-industriale-e-dellinformazione-politecnico-di-milano/dkmvtndqkyxg
+
+[^2]:
+
+  https://www.overleaf.com/latex/templates/executive-summary-scuola-di-ingegneria-industriale-e-dellinformazione-politenico-di-milano/yfvqyfyyhwrp
+
+[^3]:
+
+  https://www.overleaf.com/latex/templates/article-format-thesis-scuola-di-ingegneria-industriale-e-dellinformazione-politenico-di-milano/vtqgsrqwzdmy
