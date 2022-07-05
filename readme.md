@@ -8,7 +8,9 @@ This is a fully working latex template which tries to conform by the Politecnico
 di Milano standards for master thesis's production.
 
 The current template is the "Classical format thesis" published on October 2021
-by the Scuola 3I @ Polimi [^1].
+by the Scuola 3I @ Polimi [^1]; I've just modified the structure to define thesis data 
+into a single data file (`src/data.tex`), added a makefile for compiling the thesis and a folder for
+each chapter's file. 
 
 The Scuola 3I mandates that, for a thesis with a reviewer, an extended six page
 executive summary must be provided; this abstract must be written accoridng to
@@ -45,15 +47,8 @@ This compiles and concatenates the `cover.pdf` and `thesis.pdf` into
 For some up-to-date suggestions on the thesis TOC and writing prompts, please
 [check out this address](https://www.notion.so/Thesis-writing-prompts-445476388185454ba03440220fa00a64).
 
-[^1]:
+[^1]: https://www.ingindinf.polimi.it/it/didattica/lezioni-e-esami/esami-di-laurea-e-laurea-magistrale and https://www.overleaf.com/latex/templates/classical-format-thesis-scuola-di-ingegneria-industriale-e-dellinformazione-politecnico-di-milano/dkmvtndqkyxg
 
-  https://www.ingindinf.polimi.it/it/didattica/lezioni-e-esami/esami-di-laurea-e-laurea-magistrale
-  https://www.overleaf.com/latex/templates/classical-format-thesis-scuola-di-ingegneria-industriale-e-dellinformazione-politecnico-di-milano/dkmvtndqkyxg
+[^2]:  https://www.overleaf.com/latex/templates/executive-summary-scuola-di-ingegneria-industriale-e-dellinformazione-politenico-di-milano/yfvqyfyyhwrp
 
-[^2]:
-
-  https://www.overleaf.com/latex/templates/executive-summary-scuola-di-ingegneria-industriale-e-dellinformazione-politenico-di-milano/yfvqyfyyhwrp
-
-[^3]:
-
-  https://www.overleaf.com/latex/templates/article-format-thesis-scuola-di-ingegneria-industriale-e-dellinformazione-politenico-di-milano/vtqgsrqwzdmy
+[^3]:  https://www.overleaf.com/latex/templates/article-format-thesis-scuola-di-ingegneria-industriale-e-dellinformazione-politenico-di-milano/vtqgsrqwzdmy
