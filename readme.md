@@ -11,7 +11,7 @@ The current template follows the guidelines published on October 2021 by the
 Scuola 3I @ Polimi.
 
 In principle, you shouldn't need anything else for running it besides `gnu make`
-`pdflatex`. Checkout `example.pdf` for an example of the output.
+`pdflatex`. Checkout `thesis.pdf` for an example of the output.
 
 # Instructions
 
